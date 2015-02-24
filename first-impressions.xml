@@ -1,0 +1,192 @@
+<root>
+<build>
+    <c>scrawny</c>
+    <c>squat</c>
+    <c>huge bulging belly</c>
+    <c>barrel chested</c>
+    <c>giant-like</c>
+    <c>short</c>
+    <c>gaunt</c>
+    <c>wiry</c>
+    <c>chubby</c>
+    <c>grossly obese</c>
+</build>
+<ears>
+    <c>stud earrings</c>
+    <c>hoop earrings</c>
+    <c>dangling earrings</c>
+    <c>multiple earrings</c>
+    <c>missing an ear</c>
+    <c>long earlobes</c>
+    <c>stretched earlobes</c>
+    <c>two earlobes per ear</c>
+    <c>no earlobes</c>
+    <c>plates in earlobes</c>
+    <c>earlobe cut off</c>
+    <c>twisted ear</c>
+    <c>ears that stick out</c>
+    <c>one ear sticks out</c>
+    <c>cauliflower ear</c>
+    <c>stahl (pointed) ears</c>
+    <c>lopped or cupped ears</c>
+    <c>deformed ear</c>
+    <c>no ear canals</c>
+    <c>badly scarred ear</c>
+</ears>
+<mouth>
+    <c>perfect white teeth</c>
+    <c>sharpened teeth</c>
+    <c>metal tooth</c>
+    <c>braces</c>
+    <c>missing tooth</c>
+    <c>blackened teeth</c>
+    <c>crooked teeth</c>
+    <c>rotten teeth</c>
+    <c>two teeth left</c>
+    <c>one tooth left</c>
+    <c>no teeth</c>
+    <c>wooden teeth</c>
+    <c>buck teeth</c>
+    <c>lip ring</c>
+    <c>huge lips</c>
+    <c>thin lips</c>
+    <c>chapped lips</c>
+    <c>mouth sores</c>
+    <c>tattooed lip color</c>
+    <c>cleft lip</c>
+</mouth>
+<arms>
+    <c>arm in sling</c>
+    <c>missing arm</c>
+    <c>missing hand</c>
+    <c>one arm cut off at elbow</c>
+    <c>massive forearms</c>
+    <c>tattooed forearms</c>
+    <c>tattooed biceps</c>
+    <c>entire arm tattooed</c>
+    <c>obviously prosthetic arm</c>
+    <c>hook instead of hand</c>
+</arms>
+<nose>
+    <c>pug nose</c>
+    <c>hooked nose</c>
+    <c>beaked nose</c>
+    <c>long nose</c>
+    <c>upturned nose</c>
+    <c>bulbous nose</c>
+    <c>pointy nose</c>
+    <c>broken nose</c>
+    <c>flat nose</c>
+    <c>nose ring</c>
+</nose>
+<eyes>
+    <c>glasses</c>
+    <c>eye piece</c>
+    <c>eye patch</c>
+    <c>glass/wooden eye</c>
+    <c>one eye gouged out</c>
+    <c>different colored eyes</c>
+    <c>bloodshot eyes</c>
+    <c>dark rings under eyes</c>
+    <c>black eye</c>
+    <c>heavy eyeliner</c>
+    <c>wandering/lazy eye</c>
+    <c>crosseyed</c>
+    <c>eyes too far apart</c>
+    <c>deep set eyes</c>
+    <c>bulging eyes</c>
+    <c>squinty eyes</c>
+</eyes>
+<facial_hair>
+    <c>rough unshaven</c>
+    <c>bushy beard</c>
+    <c>neatly trimmed beard</c>
+    <c>pointed beard</c>
+    <c>long pointed beard</c>
+    <c>forked beard</c>
+    <c>goatee</c>
+    <c>braided beard</c>
+    <c>colored beard</c>
+    <c>full moustache</c>
+    <c>waxed moustache</c>
+    <c>bushy moustache</c>
+    <c>half shaved-half bearded</c>
+    <c>wood sticks in beard</c>
+    <c>ribbons in beard</c>
+    <c>five o’clock shadow</c>
+</facial_hair>
+<face>
+    <c>facemask</c>
+    <c>perfect complexion</c>
+    <c>face scar(s) from wound</c>
+    <c>face scar(s) from burns</c>
+    <c>scabs on face</c>
+    <c>open sores on face</c>
+    <c>cheek ring</c>
+    <c>facial tattoos</c>
+    <c>splotchy birthmark on face</c>
+    <c>prominent mole on face</c>
+    <c>dimpled chin</c>
+    <c>square chin</c>
+    <c>rosy cheeks</c>
+    <c>round face</c>
+    <c>high cheekbones</c>
+    <c>bushy eyebrows</c>
+    <c>one eyebrow</c>
+    <c>no eyebrows</c>
+    <c>short eyebrows</c>
+    <c>pencil-thin eyebrows</c>
+    <c>tattooed eyebrows</c>
+    <c>eyebrow piercing</c>
+    <c>brand on cheek</c>
+    <c>brand on forehead</c>
+    <c>face paint</c>
+    <c>tribal markings on face</c>
+    <c>heavy pancake makeup</c>
+    <c>freckled face</c>
+    <c>warts on face</c>
+    <c>sunburnt</c>
+    <c>wrinkled face</c>
+    <c>weatherbeaten face</c>
+    <c>pockmarked face</c>
+    <c>facial acne</c>
+    <c>partially paralyzed face</c>
+    <c>delicate face</c>
+    <c>sweaty face</c>
+    <c>facial tic</c>
+</face>
+<hair>
+    <c>flowers in hair</c>
+    <c>wet hair</c>
+    <c>oily hair</c>
+    <c>hair slicked back</c>
+    <c>unkempt hair</c>
+    <c>windblown hair</c>
+    <c>immaculate wig</c>
+    <c>poorly maintained wig</c>
+    <c>butch cut hair</c>
+    <c>bald</c>
+    <c>comb-over hair</c>
+    <c>pony tail</c>
+    <c>braided hair</c>
+    <c>ribbons in hair</c>
+    <c>wood sticks in hair</c>
+    <c>dreadlocks</c>
+    <c>hair in cornrows</c>
+    <c>extremely long hair</c>
+    <c>white hair</c>
+    <c>dyed hair</c>
+    <c>salt-n-pepper hair</c>
+    <c>afro</c>
+    <c>elaborate coif</c>
+    <c>extremely curly hair</c>
+    <c>oiled curly hair</c>
+    <c>spiked hair</c>
+    <c>mohawk</c>
+    <c>half-shaved</c>
+    <c>shaved pattern</c>
+    <c>shaved word or symbol</c>
+    <c>pigtails</c>
+    <c>mullet</c>
+</hair>
+</root>

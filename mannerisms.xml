@@ -1,0 +1,92 @@
+<root>
+<word_repetitions>
+    <c>"Do you agree?"</c>
+    <c>"Isn’t it?"</c>
+    <c>"Yeah"</c>
+    <c>"Yeeeeesssss"</c>
+    <c>"Uh"</c>
+    <c>"Like"</c>
+    <c>"You know"</c>
+    <c>uses exclamations e.g. "By jove!"</c>
+    <c>says "we" instead of "I"</c>
+</word_repetitions>
+<unconscious_irritations>
+    <c>the story keeps changing</c>
+    <c>always seeking approval</c>
+    <c>relentless comedian</c>
+    <c>wants to be everyone’s pal</c>
+    <c>talks to self</c>
+    <c>whistles</c>
+    <c>hums</c>
+    <c>always works a particular topic into conversation</c>
+    <c>fatalistic</c>
+    <c>pessimistic</c>
+    <c>optimistic</c>
+    <c>uses foreign words</c>
+    <c>fails to complete sentences</c>
+    <c>stutters</c>
+    <c>speaks in questions</c>
+    <c>talks to people who are not there</c>
+    <c>facial tic</c>
+</unconscious_irritations>
+<tone>
+    <c>excited voice</c>
+    <c>monotone</c>
+    <c>bored tone</c>
+    <c>petulant voice</c>
+    <c>perfect enunciation</c>
+    <c>speaks as if in a great hurry</c>
+    <c>speaks extremely slowly</c>
+    <c>squeaky voice</c>
+    <c>deep voice</c>
+    <c>nasal</c>
+    <c>scratchy</c>
+    <c>commanding</c>
+    <c>resonant</c>
+    <c>breathy</c>
+    <c>breathless</c>
+    <c>wheezes</c>
+    <c>slurs</c>
+    <c>sing-song</c>
+    <c>mumbles</c>
+    <c>formal</c>
+</tone>
+<hand_or_finger_behaviors>
+    <c>gesticulates wildly</c>
+    <c>points</c>
+    <c>slams open hand down</c>
+    <c>pounds fist</c>
+    <c>rolls object between fingers</c>
+</hand_or_finger_behaviors>
+<speech_oddities>
+    <c>speaks mostly with eyes closed</c>
+    <c>speaks loudly</c>
+    <c>whispers</c>
+    <c>clears throat frequently</c>
+    <c>lisps</c>
+    <c>refers to self by name</c>
+</speech_oddities>
+<inappropriate_behavior>
+    <c>belches frequently</c>
+    <c>sniffs</c>
+    <c>fits of hacking coughs</c>
+    <c>always chews (something) with mouth open</c>
+    <c>always talks about self</c>
+    <c>won’t stop talking</c>
+    <c>person of few words</c>
+    <c>patronising</c>
+    <c>constantly digressing</c>
+    <c>uses foul language</c>
+</inappropriate_behavior>
+<mouth_or_eye_behaviors>
+    <c>keeps lips pursed</c>
+    <c>licks lips</c>
+    <c>grimaces</c>
+    <c>fake smile</c>
+    <c>won’t look you in the eyes</c>
+    <c>squints</c>
+    <c>wide-eyed</c>
+    <c>blinks a lot</c>
+    <c>eye twitches</c>
+</mouth_or_eye_behaviors>
+</root>
