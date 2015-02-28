@@ -1,0 +1,817 @@
+# Translation of charfly application.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the charfly package.
+# None <sullome@yandex.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-28 17:45+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: None <sullome@yandex.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:58
+msgid "Other"
+msgstr "Другие варианты"
+
+# First impressions
+msgid "build"
+msgstr "телосложение"
+
+msgid "scrawny"
+msgstr "костлявый"
+
+msgid "squat"
+msgstr "коренастый"
+
+msgid "huge bulging belly"
+msgstr "огромный обвисший живот"
+
+msgid "barrel chested"
+msgstr "широкогрудый"
+
+msgid "giant-like"
+msgstr "громадный"
+
+msgid "short"
+msgstr "низкий"
+
+msgid "gaunt"
+msgstr "тощий, измождённый"
+
+msgid "wiry"
+msgstr "жилистый"
+
+msgid "chubby"
+msgstr "круглолицый, полнощёкий"
+
+msgid "grossly obese"
+msgstr "неухоженный и тучный"
+
+msgid "ears"
+msgstr "уши"
+
+msgid "stud earrings"
+msgstr ""
+
+msgid "hoop earrings"
+msgstr ""
+
+msgid "dangling earrings"
+msgstr ""
+
+msgid "multiple earrings"
+msgstr ""
+
+msgid "missing an ear"
+msgstr ""
+
+msgid "long earlobes"
+msgstr ""
+
+msgid "stretched earlobes"
+msgstr ""
+
+msgid "two earlobes per ear"
+msgstr ""
+
+msgid "no earlobes"
+msgstr ""
+
+msgid "plates in earlobes"
+msgstr ""
+
+msgid "earlobe cut off"
+msgstr ""
+
+msgid "twisted ear"
+msgstr ""
+
+msgid "ears that stick out"
+msgstr ""
+
+msgid "one ear sticks out"
+msgstr ""
+
+msgid "cauliflower ear"
+msgstr ""
+
+msgid "stahl (pointed) ears"
+msgstr ""
+
+msgid "lopped or cupped ears"
+msgstr ""
+
+msgid "deformed ear"
+msgstr ""
+
+msgid "no ear canals"
+msgstr ""
+
+msgid "badly scarred ear"
+msgstr ""
+
+msgid "mouth"
+msgstr ""
+
+msgid "perfect white teeth"
+msgstr ""
+
+msgid "sharpened teeth"
+msgstr ""
+
+msgid "metal tooth"
+msgstr ""
+
+msgid "braces"
+msgstr ""
+
+msgid "missing tooth"
+msgstr ""
+
+msgid "blackened teeth"
+msgstr ""
+
+msgid "crooked teeth"
+msgstr ""
+
+msgid "rotten teeth"
+msgstr ""
+
+msgid "two teeth left"
+msgstr ""
+
+msgid "one tooth left"
+msgstr ""
+
+msgid "no teeth"
+msgstr ""
+
+msgid "wooden teeth"
+msgstr ""
+
+msgid "buck teeth"
+msgstr ""
+
+msgid "lip ring"
+msgstr ""
+
+msgid "huge lips"
+msgstr ""
+
+msgid "thin lips"
+msgstr ""
+
+msgid "chapped lips"
+msgstr ""
+
+msgid "mouth sores"
+msgstr ""
+
+msgid "tattooed lip color"
+msgstr ""
+
+msgid "cleft lip"
+msgstr ""
+
+msgid "arms"
+msgstr ""
+
+msgid "arm in sling"
+msgstr ""
+
+msgid "missing arm"
+msgstr ""
+
+msgid "missing hand"
+msgstr ""
+
+msgid "one arm cut off at elbow"
+msgstr ""
+
+msgid "massive forearms"
+msgstr ""
+
+msgid "tattooed forearms"
+msgstr ""
+
+msgid "tattooed biceps"
+msgstr ""
+
+msgid "entire arm tattooed"
+msgstr ""
+
+msgid "obviously prosthetic arm"
+msgstr ""
+
+msgid "hook instead of hand"
+msgstr ""
+
+msgid "nose"
+msgstr ""
+
+msgid "pug nose"
+msgstr ""
+
+msgid "hooked nose"
+msgstr ""
+
+msgid "beaked nose"
+msgstr ""
+
+msgid "long nose"
+msgstr ""
+
+msgid "upturned nose"
+msgstr ""
+
+msgid "bulbous nose"
+msgstr ""
+
+msgid "pointy nose"
+msgstr ""
+
+msgid "broken nose"
+msgstr ""
+
+msgid "flat nose"
+msgstr ""
+
+msgid "nose ring"
+msgstr ""
+
+msgid "eyes"
+msgstr ""
+
+msgid "glasses"
+msgstr ""
+
+msgid "eye piece"
+msgstr ""
+
+msgid "eye patch"
+msgstr ""
+
+msgid "glass/wooden eye"
+msgstr ""
+
+msgid "one eye gouged out"
+msgstr ""
+
+msgid "different colored eyes"
+msgstr ""
+
+msgid "bloodshot eyes"
+msgstr ""
+
+msgid "dark rings under eyes"
+msgstr ""
+
+msgid "black eye"
+msgstr ""
+
+msgid "heavy eyeliner"
+msgstr ""
+
+msgid "wandering/lazy eye"
+msgstr ""
+
+msgid "crosseyed"
+msgstr ""
+
+msgid "eyes too far apart"
+msgstr ""
+
+msgid "deep set eyes"
+msgstr ""
+
+msgid "bulging eyes"
+msgstr ""
+
+msgid "squinty eyes"
+msgstr ""
+
+msgid "facial_hair"
+msgstr ""
+
+msgid "rough unshaven"
+msgstr ""
+
+msgid "bushy beard"
+msgstr ""
+
+msgid "neatly trimmed beard"
+msgstr ""
+
+msgid "pointed beard"
+msgstr ""
+
+msgid "long pointed beard"
+msgstr ""
+
+msgid "forked beard"
+msgstr ""
+
+msgid "goatee"
+msgstr ""
+
+msgid "braided beard"
+msgstr ""
+
+msgid "colored beard"
+msgstr ""
+
+msgid "full moustache"
+msgstr ""
+
+msgid "waxed moustache"
+msgstr ""
+
+msgid "bushy moustache"
+msgstr ""
+
+msgid "half shaved-half bearded"
+msgstr ""
+
+msgid "wood sticks in beard"
+msgstr ""
+
+msgid "ribbons in beard"
+msgstr ""
+
+msgid "five o’clock shadow"
+msgstr ""
+
+msgid "face"
+msgstr ""
+
+msgid "facemask"
+msgstr ""
+
+msgid "perfect complexion"
+msgstr ""
+
+msgid "face scar(s) from wound"
+msgstr ""
+
+msgid "face scar(s) from burns"
+msgstr ""
+
+msgid "scabs on face"
+msgstr ""
+
+msgid "open sores on face"
+msgstr ""
+
+msgid "cheek ring"
+msgstr ""
+
+msgid "facial tattoos"
+msgstr ""
+
+msgid "splotchy birthmark on face"
+msgstr ""
+
+msgid "prominent mole on face"
+msgstr ""
+
+msgid "dimpled chin"
+msgstr ""
+
+msgid "square chin"
+msgstr ""
+
+msgid "rosy cheeks"
+msgstr ""
+
+msgid "round face"
+msgstr ""
+
+msgid "high cheekbones"
+msgstr ""
+
+msgid "bushy eyebrows"
+msgstr ""
+
+msgid "one eyebrow"
+msgstr ""
+
+msgid "no eyebrows"
+msgstr ""
+
+msgid "short eyebrows"
+msgstr ""
+
+msgid "pencil-thin eyebrows"
+msgstr ""
+
+msgid "tattooed eyebrows"
+msgstr ""
+
+msgid "eyebrow piercing"
+msgstr ""
+
+msgid "brand on cheek"
+msgstr ""
+
+msgid "brand on forehead"
+msgstr ""
+
+msgid "face paint"
+msgstr ""
+
+msgid "tribal markings on face"
+msgstr ""
+
+msgid "heavy pancake makeup"
+msgstr ""
+
+msgid "freckled face"
+msgstr ""
+
+msgid "warts on face"
+msgstr ""
+
+msgid "sunburnt"
+msgstr ""
+
+msgid "wrinkled face"
+msgstr ""
+
+msgid "weatherbeaten face"
+msgstr ""
+
+msgid "pockmarked face"
+msgstr ""
+
+msgid "facial acne"
+msgstr ""
+
+msgid "partially paralyzed face"
+msgstr ""
+
+msgid "delicate face"
+msgstr ""
+
+msgid "sweaty face"
+msgstr ""
+
+msgid "facial tic"
+msgstr ""
+
+msgid "hair"
+msgstr ""
+
+msgid "flowers in hair"
+msgstr ""
+
+msgid "wet hair"
+msgstr ""
+
+msgid "oily hair"
+msgstr ""
+
+msgid "hair slicked back"
+msgstr ""
+
+msgid "unkempt hair"
+msgstr ""
+
+msgid "windblown hair"
+msgstr ""
+
+msgid "immaculate wig"
+msgstr ""
+
+msgid "poorly maintained wig"
+msgstr ""
+
+msgid "butch cut hair"
+msgstr ""
+
+msgid "bald"
+msgstr ""
+
+msgid "comb-over hair"
+msgstr ""
+
+msgid "pony tail"
+msgstr ""
+
+msgid "braided hair"
+msgstr ""
+
+msgid "ribbons in hair"
+msgstr ""
+
+msgid "wood sticks in hair"
+msgstr ""
+
+msgid "dreadlocks"
+msgstr ""
+
+msgid "hair in cornrows"
+msgstr ""
+
+msgid "extremely long hair"
+msgstr ""
+
+msgid "white hair"
+msgstr ""
+
+msgid "dyed hair"
+msgstr ""
+
+msgid "salt-n-pepper hair"
+msgstr ""
+
+msgid "afro"
+msgstr ""
+
+msgid "elaborate coif"
+msgstr ""
+
+msgid "extremely curly hair"
+msgstr ""
+
+msgid "oiled curly hair"
+msgstr ""
+
+msgid "spiked hair"
+msgstr ""
+
+msgid "mohawk"
+msgstr ""
+
+msgid "half-shaved"
+msgstr ""
+
+msgid "shaved pattern"
+msgstr ""
+
+msgid "shaved word or symbol"
+msgstr ""
+
+msgid "pigtails"
+msgstr ""
+
+msgid "mullet"
+msgstr ""
+
+# Mannerisms
+msgid "word_repetitions"
+msgstr ""
+
+msgid "\"Do you agree?\""
+msgstr ""
+
+msgid "\"Isn’t it?\""
+msgstr ""
+
+msgid "\"Yeah\""
+msgstr ""
+
+msgid "\"Yeeeeesssss\""
+msgstr ""
+
+msgid "\"Uh\""
+msgstr ""
+
+msgid "\"Like\""
+msgstr ""
+
+msgid "\"You know\""
+msgstr ""
+
+msgid "uses exclamations e.g. \"By jove!\""
+msgstr ""
+
+msgid "says \"we\" instead of \"I\""
+msgstr ""
+
+msgid "unconscious_irritations"
+msgstr ""
+
+msgid "the story keeps changing"
+msgstr ""
+
+msgid "always seeking approval"
+msgstr ""
+
+msgid "relentless comedian"
+msgstr ""
+
+msgid "wants to be everyone’s pal"
+msgstr ""
+
+msgid "talks to self"
+msgstr ""
+
+msgid "whistles"
+msgstr ""
+
+msgid "hums"
+msgstr ""
+
+msgid "always works a particular topic into conversation"
+msgstr ""
+
+msgid "fatalistic"
+msgstr ""
+
+msgid "pessimistic"
+msgstr ""
+
+msgid "optimistic"
+msgstr ""
+
+msgid "uses foreign words"
+msgstr ""
+
+msgid "fails to complete sentences"
+msgstr ""
+
+msgid "stutters"
+msgstr ""
+
+msgid "speaks in questions"
+msgstr ""
+
+msgid "talks to people who are not there"
+msgstr ""
+
+# Already defined
+# msgid "facial tic"
+# msgstr ""
+
+msgid "tone"
+msgstr ""
+
+msgid "excited voice"
+msgstr ""
+
+msgid "monotone"
+msgstr ""
+
+msgid "bored tone"
+msgstr ""
+
+msgid "petulant voice"
+msgstr ""
+
+msgid "perfect enunciation"
+msgstr ""
+
+msgid "speaks as if in a great hurry"
+msgstr ""
+
+msgid "speaks extremely slowly"
+msgstr ""
+
+msgid "squeaky voice"
+msgstr ""
+
+msgid "deep voice"
+msgstr ""
+
+msgid "nasal"
+msgstr ""
+
+msgid "scratchy"
+msgstr ""
+
+msgid "commanding"
+msgstr ""
+
+msgid "resonant"
+msgstr ""
+
+msgid "breathy"
+msgstr ""
+
+msgid "breathless"
+msgstr ""
+
+msgid "wheezes"
+msgstr ""
+
+msgid "slurs"
+msgstr ""
+
+msgid "sing-song"
+msgstr ""
+
+msgid "mumbles"
+msgstr ""
+
+msgid "formal"
+msgstr ""
+
+msgid "hand_or_finger_behaviors"
+msgstr ""
+
+msgid "gesticulates wildly"
+msgstr ""
+
+msgid "points"
+msgstr ""
+
+msgid "slams open hand down"
+msgstr ""
+
+msgid "pounds fist"
+msgstr ""
+
+msgid "rolls object between fingers"
+msgstr ""
+
+msgid "speech_oddities"
+msgstr ""
+
+msgid "speaks mostly with eyes closed"
+msgstr ""
+
+msgid "speaks loudly"
+msgstr ""
+
+msgid "whispers"
+msgstr ""
+
+msgid "clears throat frequently"
+msgstr ""
+
+msgid "lisps"
+msgstr ""
+
+msgid "refers to self by name"
+msgstr ""
+
+msgid "inappropriate_behavior"
+msgstr ""
+
+msgid "belches frequently"
+msgstr ""
+
+msgid "sniffs"
+msgstr ""
+
+msgid "fits of hacking coughs"
+msgstr ""
+
+msgid "always chews (something) with mouth open"
+msgstr ""
+
+msgid "always talks about self"
+msgstr ""
+
+msgid "won’t stop talking"
+msgstr ""
+
+msgid "person of few words"
+msgstr ""
+
+msgid "patronising"
+msgstr ""
+
+msgid "constantly digressing"
+msgstr ""
+
+msgid "uses foul language"
+msgstr ""
+
+msgid "mouth_or_eye_behaviors"
+msgstr ""
+
+msgid "keeps lips pursed"
+msgstr ""
+
+msgid "licks lips"
+msgstr ""
+
+msgid "grimaces"
+msgstr ""
+
+msgid "fake smile"
+msgstr ""
+
+msgid "won’t look you in the eyes"
+msgstr ""
+
+msgid "squints"
+msgstr ""
+
+msgid "wide-eyed"
+msgstr ""
+
+msgid "blinks a lot"
+msgstr ""
+
+msgid "eye twitches"
+msgstr ""
