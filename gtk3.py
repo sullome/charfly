@@ -4,6 +4,10 @@ from random import choice
 import main as charfly
 
 class FastCharacter(Gtk.Window):
+    GENDERS = ['male', 'female']
+    NATIONS = ['eng', 'franch', 'german', 'ital', 'spanish']
+    MID_AGE = 30
+
     def __init__(self):
         Gtk.Window.__init__(self)
 
@@ -11,50 +15,26 @@ class FastCharacter(Gtk.Window):
 
         self.nations = self.drop_down('Национальность', self.NATIONS, vbox)
         self.gender = self.drop_down('Пол', self.GENDERS, vbox)
-        #self.type_ = self.drop_down('Архетип', self.TYPES, vbox)
-        #self.level = self.drop_down('Ранг', self.LEVELS, vbox, False)
+
+        self.age = self.input_num('Средний возраст', self.MID_AGE, 1, 100, vbox)
+        self.count = self.input_num('Количество', 1, 1, 100, vbox)
 
         generate = Gtk.Button('Сгенерировать')
         generate.connect('clicked', self.generate_character)
 
         vbox.pack_start(generate, True, True, 6)
 
-        left_text = self.textfield()
-        self.result = left_text.get_buffer()
-
-        #right_text = self.textfield()
-        #self.stats = right_text.get_buffer()
+        text = Gtk.TextView()
+        text.set_editable(False)
+        text.set_cursor_visible(False)
+        text.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
+        self.result = text.get_buffer()
 
         hbox = Gtk.Box(spacing = 1)
         hbox.pack_start(vbox, False, False, 5)
-        hbox.pack_start(left_text, True, True, 0)
-        #hbox.pack_start(right_text, True, True, 0)
+        hbox.pack_start(text, True, True, 0)
 
         self.add(hbox)
-
-    NATIONS = {'eu_white': 'Белый',
-               'latin': 'Latin',
-               'eu_afro': 'Негр',
-               'chinese': 'Китай'
-               }
-    GENDERS = {'male': 'Мужской', 'female': 'Женский'}
-    TYPES = {'gunslinger': 'Стрелок',
-             'huckster': 'Картёжник',
-             'doctor': 'Доктор',
-             'leader': 'Командир',
-             'civil': 'Цивил'
-             }
-    LEVELS = {'1newbie': 'Новичок',
-              '2seasoned': 'Закалённый',
-              '3veteran': 'Ветеран',
-              '4hero': 'Герой',
-              '5legend': 'Легенда'
-              }
-
-    FILES_EU = ('eng', 'franch', 'german', 'ital')
-    FILES_LAT = ('ital', 'spanish')
-
-    MID_AGE = 30
 
     def drop_down(self, label, values, container, can_be_random = True):
         lbl = Gtk.Label(label)
@@ -62,11 +42,10 @@ class FastCharacter(Gtk.Window):
 
         cb = Gtk.ComboBoxText()
 
-        if can_be_random: cb.append('random', 'Случайно')
+        if can_be_random: cb.append_text('Random')
 
-        pairs = sorted(values.items())
-        for pair in pairs:
-            cb.append(*pair)
+        for val in values:
+            cb.append_text(val)
 
         cb.set_active(0)
 
@@ -78,33 +57,55 @@ class FastCharacter(Gtk.Window):
 
         return cb
 
-    def textfield(self):
-        txt = Gtk.TextView()
-        txt.set_editable(False)
-        txt.set_cursor_visible(False)
-        txt.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
-        return txt
+    def input_num(self, label, start, lower, upper, container):
+        lbl = Gtk.Label(label)
+        lbl.set_justify(Gtk.Justification.LEFT)
+
+        adj = Gtk.Adjustment(start, lower, upper, 1, 10, 0)
+        num = Gtk.SpinButton()
+        num.set_adjustment(adj)
+        num.set_value(start)
+        num.set_numeric(True)
+
+        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 4)
+        box.pack_start(lbl, True, True, 0)
+        box.pack_start(num, False, False, 0)
+
+        container.pack_start(box, True, False, 0)
+
+        return num
 
     def get_value(self, in_widget, values):
-        in_id = in_widget.get_active_id()
-        if in_id == 'random':
-            return choice(list(values.keys()))
+        in_ = in_widget.get_active_text().lower()
+        if in_== 'random':
+            return choice(values)
         else:
-            return in_id
+            return in_
 
     def generate_character(self, widget):
-        nation = self.get_value(self.nations, self.NATIONS)
-        gender = self.get_value(self.gender, self.GENDERS)
-        #type_  = self.get_value(self.type_, self.TYPES)
-        #level  = self.level.get_active_id()[1:]
+        count = self.count.get_value_as_int()
+        age = self.age.get_value_as_int()
+        
+        if not count > 1:
+            nation = self.get_value(self.nations, self.NATIONS)
+            gender = self.get_value(self.gender, self.GENDERS)
 
-        if nation[:2] == 'eu':
-            nation = choice(self.FILES_EU) 
-        elif nation == 'latin':
-            nation = choice(self.FILES_LAT)
+            self.result.set_text(
+                charfly.decorate(charfly.create(nation, gender, age))
+                )
+        else:
+            nation = self.nations.get_active_text()
+            if nation.lower() == 'random':
+                nation = self.NATIONS
 
-        character = charfly.create(nation, gender, self.MID_AGE)
-        self.result.set_text(charfly.decorate(character))
+            gender = self.gender.get_active_text()
+            if gender.lower() == 'random':
+                gender = self.GENDERS
+
+            self.result.set_text(
+                charfly.create_decorated(nation, gender, age, count)
+                )
+        return None
 
 def main():
     win = FastCharacter()
