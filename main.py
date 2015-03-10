@@ -28,7 +28,7 @@ def xml2opt(path):
     for type_ in root:
         tag = split_words(_(type_.tag))
         txt = _(choice(list(type_)).text)
-        result.append('{}: {}'.format(tag, txt))
+        result.append((tag, txt))
 
     emph = choice(result)
     result.remove(emph)
@@ -44,19 +44,57 @@ def create(nation, gender, mid_age, datapath = get_data()):
     first_impression, f_other = xml2opt(
         path.join(datapath, 'first-impressions.xml')
     )
-    return (name, age, mannerism, m_other, first_impression, f_other)
+    return (name, age, nation, gender,
+            mannerism, first_impression,
+            m_other, f_other)
 
-def decorate(char):
-    return ('{0[0]} ({0[1]})'
-        '\n\n{0[2]}'
-        '\n{3}:\n    {1}'
-        '\n\n{0[4]}'
-        '\n{3}:\n    {2}').format(
-            char,
-            '\n    '.join(char[3]),
-            '\n    '.join(char[5]),
-            _('Other')
-        ) 
+def create_decorated(nation, gender, mid_age, count, datapath = get_data()):
+    if count < 1:
+        return 'Unexpected value.'
+
+    result = []
+    for i in range(count):
+        result.append(
+            decorate(
+                create(choice(nation), choice(gender), mid_age),
+                full = False
+                )
+            )
+    return '\n\n----\n\n'.join(result)
+
+def decorate(char, full = True):
+    if not full:
+        return (
+            '{0[0]} ({0[1]})\n'
+            '{1}: {0[2]}, {2}: {0[3]}\n\n'
+            '{3}: '
+            '{0[4][1]} ({0[4][0]})\n'
+            '{4}: '
+            '{0[5][1]} ({0[5][0]})'
+            ).format(
+                char,
+                _('Nation'),
+                _('gender'),
+                _('Mannerism'),
+                _('First impression')
+                )
+    else:
+        return (
+            '{0[0]} ({0[1]})\n\n'
+            '{3}: {0[2]}, {4}: {0[3]}\n\n'
+            '{0[4][0]}: {0[4][1]}\n'
+            '{5}:\n    '
+            '{1}\n\n'
+            '{0[5][0]}: {0[5][1]}\n'
+            '{5}:\n    '
+            '{2}').format(
+                char,
+                '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[6]),
+                '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[7]),
+                _('Nation'),
+                _('gender'),
+                _('Other')
+                ) 
 
 def main ():
     character = create('eng', 'male', 30, '/home/none/prj/charfly')
