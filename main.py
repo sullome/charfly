@@ -3,7 +3,7 @@ import os.path as path
 import xml.etree.ElementTree as ET
 from random import choice, randint
 import gettext
-from jang.main import single_name
+from jang import single_name
 
 gettext.install('charfly', '/home/none/prj/charfly/locale')
 
@@ -44,7 +44,8 @@ def get_first_reaction():
     for reaction in root:
         if roll in range(int(reaction.get('start')), int(reaction.get('end')) + 1):
             tag = split_words(_(reaction.tag))
-            return (reaction.tag, reaction.text)
+            description = _(reaction.text).strip()
+            return (tag, description)
 
 def create(nation, gender, mid_age, datapath = get_data()):
     name = single_name(nation, gender)
@@ -105,7 +106,7 @@ def decorate(char, full = True):
             '{5}:\n    '
             '{2}\n\n'
             '{6}: '
-            '{0[8][0]}\n{0[8][1]}'
+            '{0[8][0]}\n    {0[8][1]}'
             ).format(
                 char,
                 '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[6]),
@@ -121,5 +122,4 @@ def main ():
     print(decorate(character))
 
 if __name__ == '__main__':
-    #main()
-    print(get_first_reaction())
+    main()
