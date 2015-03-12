@@ -30,15 +30,15 @@ class FastCharacter(Gtk.Window):
         text.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
         self.result = text.get_buffer()
 
-	scroll = Gtk.ScrolledWindow()
-	# Not sure. Test.
-	#scroll.set_vexpand(True)
-	#scroll.set_hexpand(False)
-	scroll.add(text)
+        scroll = Gtk.ScrolledWindow()
+        scroll.add(text)
+
+        text_margin = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        text_margin.pack_start(scroll, True, True, 3)
 
         hbox = Gtk.Box(spacing = 1)
         hbox.pack_start(vbox, False, False, 5)
-        hbox.pack_start(scroll, True, True, 0)
+        hbox.pack_start(text_margin, True, True, 3)
 
         self.add(hbox)
 
