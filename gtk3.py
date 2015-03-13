@@ -2,10 +2,11 @@
 from gi.repository import Gtk, Pango
 from random import choice
 import main as charfly
+from jang import get_allnat
 
 class FastCharacter(Gtk.Window):
+    NATIONS = get_allnat()
     GENDERS = ['male', 'female']
-    NATIONS = ['eng', 'franch', 'german', 'ital', 'spanish']
     MID_AGE = 30
 
     def __init__(self):
@@ -48,10 +49,10 @@ class FastCharacter(Gtk.Window):
 
         cb = Gtk.ComboBoxText()
 
-        if can_be_random: cb.append_text('Random')
+        if can_be_random: cb.append('random', 'Random')
 
         for val in values:
-            cb.append_text(val)
+            cb.append(val, val.capitalize())
 
         cb.set_active(0)
 
@@ -82,35 +83,24 @@ class FastCharacter(Gtk.Window):
         return num
 
     def get_value(self, in_widget, values):
-        in_ = in_widget.get_active_text().lower()
+        in_ = in_widget.get_active_id()
         if in_== 'random':
-            return choice(values)
+            return values
         else:
             return in_
 
     def generate_character(self, widget):
+        nations = self.get_value(self.nations, self.NATIONS)
+        genders = self.get_value(self.gender, self.GENDERS)
         count = self.count.get_value_as_int()
         age = self.age.get_value_as_int()
-        
-        if not count > 1:
-            nation = self.get_value(self.nations, self.NATIONS)
-            gender = self.get_value(self.gender, self.GENDERS)
 
-            self.result.set_text(
-                charfly.decorate(charfly.create(nation, gender, age))
-                )
+        characters = charfly.create(nations, genders, age, count)
+        if count > 1: 
+            text = charfly.decorate(characters, False)
         else:
-            nation = self.nations.get_active_text()
-            if nation.lower() == 'random':
-                nation = self.NATIONS
-
-            gender = self.gender.get_active_text()
-            if gender.lower() == 'random':
-                gender = self.GENDERS
-
-            self.result.set_text(
-                charfly.create_decorated(nation, gender, age, count)
-                )
+            text = charfly.decorate(characters)
+        self.result.set_text(text)
         return None
 
 def main():

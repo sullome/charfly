@@ -46,77 +46,77 @@ def get_first_reaction():
     description = _(reaction.text).strip()
     return (tag, description)
 
-def create(nation, gender, mid_age, datapath = get_data()):
+def create(nations, genders, mid_age, count = 1, datapath = get_data()):
     from jang import single_name
-    name = single_name(nation, gender)
-
-    age = get_age(mid_age)
-    mannerism, m_other = xml2opt(
-        path.join(datapath, 'mannerisms.xml')
-    )
-    first_impression, f_other = xml2opt(
-        path.join(datapath, 'first-impressions.xml')
-    )
-    first_reaction = get_first_reaction()
-    return (name, age, nation, gender,
-            mannerism, first_impression,
-            m_other, f_other,
-            first_reaction)
-
-def create_decorated(nation, gender, mid_age, count, datapath = get_data()):
-    if count < 1:
-        return 'Unexpected value.'
 
     result = []
-    for i in range(count):
-        result.append(
-            decorate(
-                create(choice(nation), choice(gender), mid_age),
-                full = False
-                )
-            )
-    return '\n\n----\n\n'.join(result)
 
-def decorate(char, full = True):
-    if not full:
-        return (
-            '{0[0]} ({0[1]})\n'
-            '{1}: {0[2]}, {2}: {0[3]}\n\n'
-            '{3}: '
-            '{0[4][1]} ({0[4][0]})\n'
-            '{4}: '
-            '{0[5][1]} ({0[5][0]})\n'
-            '{5}: '
-            '{0[8][0]}'
-            ).format(
-                char,
-                _('Nation'),
-                _('gender'),
-                _('Mannerism'),
-                _('First impression'),
-                _('First reaction')
-                )
-    else:
-        return (
-            '{0[0]} ({0[1]})\n\n'
-            '{3}: {0[2]}, {4}: {0[3]}\n\n'
-            '{0[4][0]}: {0[4][1]}\n'
-            '{5}:\n    '
-            '{1}\n\n'
-            '{0[5][0]}: {0[5][1]}\n'
-            '{5}:\n    '
-            '{2}\n\n'
-            '{6}: '
-            '{0[8][0]}\n    {0[8][1]}'
-            ).format(
-                char,
-                '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[6]),
-                '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[7]),
-                _('Nation'),
-                _('gender'),
-                _('Other'),
-                _('First reaction')
-                ) 
+    for i in range(count):
+        nation = choice(nations)
+        gender = choice(genders)
+        age = get_age(mid_age)
+
+        name = single_name(nation, gender)
+
+        mannerism, m_other = xml2opt(
+            path.join(datapath, 'mannerisms.xml')
+        )
+        first_impression, f_other = xml2opt(
+            path.join(datapath, 'first-impressions.xml')
+        )
+        first_reaction = get_first_reaction()
+
+        result.append((name, age, nation, gender,
+            mannerism, first_impression,
+            m_other, f_other,
+            first_reaction))
+    return result
+
+def decorate(chars, full = True):
+    result = []
+    for char in chars:
+        if not full:
+            result.append((
+                '{0[0]} ({0[1]})\n'
+                '{1}: {0[2]}, {2}: {0[3]}\n\n'
+                '{3}: '
+                '{0[4][1]} ({0[4][0]})\n'
+                '{4}: '
+                '{0[5][1]} ({0[5][0]})\n'
+                '{5}: '
+                '{0[8][0]}'
+                ).format(
+                    char,
+                    _('Nation'),
+                    _('gender'),
+                    _('Mannerism'),
+                    _('First impression'),
+                    _('First reaction')
+                    )
+            )
+        else:
+            result.append((
+                '{0[0]} ({0[1]})\n\n'
+                '{3}: {0[2]}, {4}: {0[3]}\n\n'
+                '{0[4][0]}: {0[4][1]}\n'
+                '{5}:\n    '
+                '{1}\n\n'
+                '{0[5][0]}: {0[5][1]}\n'
+                '{5}:\n    '
+                '{2}\n\n'
+                '{6}: '
+                '{0[8][0]}\n    {0[8][1]}'
+                ).format(
+                    char,
+                    '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[6]),
+                    '\n    '.join('{0[0]}: {0[1]}'.format(t) for t in char[7]),
+                    _('Nation'),
+                    _('gender'),
+                    _('Other'),
+                    _('First reaction')
+                    ) 
+            )
+    return '\n\n-----\n\n'.join(result)
 
 def main ():
     character = create('eng', 'male', 30, '/home/none/prj/charfly')
