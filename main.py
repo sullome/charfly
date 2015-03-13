@@ -1,9 +1,11 @@
 #!/usr/bin/python
+from rollingdice.fudge import fudge
+from rollingdice.main import dice
+
 import os.path as path
 import xml.etree.ElementTree as ET
-from random import choice, randint
+from random import choice
 import gettext
-from jang import single_name
 
 gettext.install('charfly', '/home/none/prj/charfly/locale')
 
@@ -32,23 +34,22 @@ def get_age(mid):
     # mid + 10 * (4df) + d10
     age = 0
     while age <= 0:
-        age = mid + sum(choice([-10, 0, 10]) for i in range(4)) + randint(1,10)
+        age = mid + 10 * fudge(fancy = False) + dice(10)
     return age
 
 def get_first_reaction():
     tree = ET.parse('first-reactions.xml')
     root = tree.getroot()
 
-    roll = randint(1,6) + randint(1,6)
-
-    for reaction in root:
-        if roll in range(int(reaction.get('start')), int(reaction.get('end')) + 1):
-            tag = split_words(_(reaction.tag))
-            description = _(reaction.text).strip()
-            return (tag, description)
+    reaction = root.find('*[@numeric="{}"]'.format(fudge(fancy = False)))
+    tag = split_words(_(reaction.tag))
+    description = _(reaction.text).strip()
+    return (tag, description)
 
 def create(nation, gender, mid_age, datapath = get_data()):
+    from jang import single_name
     name = single_name(nation, gender)
+
     age = get_age(mid_age)
     mannerism, m_other = xml2opt(
         path.join(datapath, 'mannerisms.xml')
