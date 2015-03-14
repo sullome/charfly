@@ -3,7 +3,7 @@ import main as charfly
 from jang import get_allnat
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QLabel, QGroupBox
 
 class OptionList():
     def __init__(self, options = None, parent = None):
