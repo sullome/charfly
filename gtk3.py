@@ -4,13 +4,13 @@ from random import choice
 import main as charfly
 from jang import get_allnat
 
-class FastCharacter(Gtk.Window):
-    NATIONS = get_allnat()
-    GENDERS = ['male', 'female']
-    MID_AGE = 30
-
+class CharflyGtk(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self)
+
+        self.NATIONS = get_allnat()
+        self.GENDERS = ['male', 'female']
+        self.MID_AGE = 30
 
         vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
 
