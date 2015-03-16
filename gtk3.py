@@ -4,18 +4,47 @@ from random import choice
 import main as charfly
 from jang import get_allnat
 
+class OptionList(Gtk.Box):
+    def __init__(self, label, options):
+        Gtk.Box.__init__(self, orientation = Gtk.Orientation.VERTICAL)
+
+        self.label = Gtk.Label(label)
+        self.scroll = Gtk.ScrolledWindow()
+        self.box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        self.values = []
+
+        self.add_options(options)
+        self.scroll.add(self.box)
+
+        self.pack_start(self.label, False, False, 0)
+        self.pack_start(self.scroll, True, True, 0)
+
+    def get_all_active(self):
+        active = [option.get_label().lower()
+            for option
+            in self.values
+            if option.get_active()
+            ]
+        return active
+
+    def add_options(self, options):
+        for option in options:
+            option = Gtk.CheckButton(option.capitalize())
+            self.values.append(option)
+            self.box.pack_start(option, False, False, 0)
+
 class CharflyGtk(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self)
 
-        self.NATIONS = get_allnat()
-        self.GENDERS = ['male', 'female']
+        #self.NATIONS = get_allnat()
+        #self.GENDERS = ['male', 'female']
         self.MID_AGE = 30
 
-        vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-
-        self.nations = self.drop_down('Национальность', self.NATIONS, vbox)
-        self.gender = self.drop_down('Пол', self.GENDERS, vbox)
+        #self.nations = self.drop_down('Национальность', self.NATIONS, vbox)
+        self.nations = OptionList('Национальность', get_allnat())
+        #self.gender = self.drop_down('Пол', self.GENDERS, vbox)
+        self.gender = OptionList('Пол', ['male', 'female'])
 
         self.age = self.input_num('Средний возраст', self.MID_AGE, 1, 100, vbox)
         self.count = self.input_num('Количество', 1, 1, 100, vbox)
@@ -23,7 +52,10 @@ class CharflyGtk(Gtk.Window):
         generate = Gtk.Button('Сгенерировать')
         generate.connect('clicked', self.generate_character)
 
-        vbox.pack_start(generate, True, True, 6)
+        vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        vbox.pack_start(self.nations, True, True, 6)
+        vbox.pack_start(self.gender, True, True, 6)
+        vbox.pack_start(generate, True, False, 6)
 
         text = Gtk.TextView()
         text.set_editable(False)
