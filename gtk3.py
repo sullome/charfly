@@ -46,13 +46,14 @@ class CharflyGtk(Gtk.Window):
         #self.gender = self.drop_down('Пол', self.GENDERS, vbox)
         self.gender = OptionList('Пол', ['male', 'female'])
 
+        vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+
         self.age = self.input_num('Средний возраст', self.MID_AGE, 1, 100, vbox)
         self.count = self.input_num('Количество', 1, 1, 100, vbox)
 
         generate = Gtk.Button('Сгенерировать')
         generate.connect('clicked', self.generate_character)
 
-        vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
         vbox.pack_start(self.nations, True, True, 6)
         vbox.pack_start(self.gender, True, True, 6)
         vbox.pack_start(generate, True, False, 6)
