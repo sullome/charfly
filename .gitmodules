@@ -1,3 +1,6 @@
 [submodule "jang"]
 	path = jang
 	url = https://github.com/sullome/jang.git
+[submodule "rollingdice"]
+	path = rollingdice
+	url = git@github.com:sullome/rollingdice.git
