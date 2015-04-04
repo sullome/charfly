@@ -10,7 +10,7 @@ class OptionList(Gtk.Box):
 
         self.label = Gtk.Label(label)
         self.scroll = Gtk.ScrolledWindow()
-        self.box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        self.box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 5)
         self.values = []
 
         self.add_options(options)
@@ -40,23 +40,22 @@ class CharflyGtk(Gtk.Window):
         #self.NATIONS = get_allnat()
         #self.GENDERS = ['male', 'female']
         self.MID_AGE = 30
+        vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
 
         #self.nations = self.drop_down('Национальность', self.NATIONS, vbox)
         self.nations = OptionList('Национальность', get_allnat())
-        #self.gender = self.drop_down('Пол', self.GENDERS, vbox)
-        self.gender = OptionList('Пол', ['male', 'female'])
+        vbox.pack_start(self.nations, True, True, 6)
 
-        vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        #self.genders = self.drop_down('Пол', self.GENDERS, vbox)
+        self.genders = OptionList('Пол', ['male', 'female'])
+        vbox.pack_start(self.genders, True, True, 6)
 
         self.age = self.input_num('Средний возраст', self.MID_AGE, 1, 100, vbox)
         self.count = self.input_num('Количество', 1, 1, 100, vbox)
 
         generate = Gtk.Button('Сгенерировать')
         generate.connect('clicked', self.generate_character)
-
-        vbox.pack_start(self.nations, True, True, 6)
-        vbox.pack_start(self.gender, True, True, 6)
-        vbox.pack_start(generate, True, False, 6)
+        vbox.pack_start(generate, False, False, 6)
 
         text = Gtk.TextView()
         text.set_editable(False)
@@ -111,7 +110,7 @@ class CharflyGtk(Gtk.Window):
         box.pack_start(lbl, True, True, 0)
         box.pack_start(num, False, False, 0)
 
-        container.pack_start(box, True, False, 0)
+        container.pack_start(box, False, False, 0)
 
         return num
 
@@ -123,16 +122,14 @@ class CharflyGtk(Gtk.Window):
             return in_
 
     def generate_character(self, widget):
-        nations = self.get_value(self.nations, self.NATIONS)
-        genders = self.get_value(self.gender, self.GENDERS)
+        nations = self.nations.get_all_active()
+        genders = self.genders.get_all_active()
         count = self.count.get_value_as_int()
         age = self.age.get_value_as_int()
 
         characters = charfly.create(nations, genders, age, count)
-        if count > 1: 
-            text = charfly.decorate(characters, False)
-        else:
-            text = charfly.decorate(characters)
+        text = charfly.decorate(characters, count <= 1)
+
         self.result.set_text(text)
         return None
 
