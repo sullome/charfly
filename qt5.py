@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import main as charfly
-from jang import get_allnat
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QWidget,
@@ -37,7 +36,7 @@ class CharflyQt(QWidget):
 
         self.MID_AGE = 30
 
-        self.nations = OptionList('Национальность', get_allnat())
+        self.nations = OptionList('Национальность', charfly.get_allnat())
         self.genders = OptionList('Пол', ['male', 'female'])
 
         self.age = QSpinBox()

@@ -2,7 +2,6 @@
 from gi.repository import Gtk, Pango
 from random import choice
 import main as charfly
-from jang import get_allnat
 
 class OptionList(Gtk.Box):
     def __init__(self, label, options):
@@ -43,7 +42,7 @@ class CharflyGtk(Gtk.Window):
         vbox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
 
         #self.nations = self.drop_down('Национальность', self.NATIONS, vbox)
-        self.nations = OptionList('Национальность', get_allnat())
+        self.nations = OptionList('Национальность', charfly.get_allnat())
         vbox.pack_start(self.nations, True, True, 6)
 
         #self.genders = self.drop_down('Пол', self.GENDERS, vbox)

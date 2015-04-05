@@ -2,7 +2,7 @@
 from rollingdice.fudge import fudge
 from rollingdice.main import dice
 
-import os.path as path
+from os import path, listdir
 import xml.etree.ElementTree as ET
 from random import choice
 import gettext
@@ -18,6 +18,23 @@ def get_data():
         d = getenv('XDG_DATA_HOME')
         if d: return path.join(d, 'charfly')
         else: return path.join(getenv('HOME'),'.local/share/charfly')
+
+def check_full(files, nat):
+    if files.count(nat) < 3:
+        return False
+    else:
+        return True
+
+def get_allnat():
+    files = listdir(path.join(get_data(), 'jang'))
+    nats = set()
+    checklist = []
+    for f in files:
+        f = f.split('_')[0]
+        nats.add(f)
+        checklist.append(f)
+    nats = list(nat for nat in nats if check_full(checklist, nat))
+    return nats
 
 def xml2opt(path):
     result = []
@@ -43,7 +60,7 @@ def get_age(mid):
     return age
 
 def get_first_reaction():
-    tree = ET.parse('first-reactions.xml')
+    tree = ET.parse(path.join(get_data(), 'first-reactions.xml'))
     root = tree.getroot()
 
     reaction = root.find('*[@numeric="{}"]'.format(fudge(fancy = False)))
@@ -61,7 +78,8 @@ def create(nations, genders, mid_age, count = 1, datapath = get_data()):
         gender = choice(genders)
         age = get_age(mid_age)
 
-        name = single_name(nation, gender)
+        name = single_name(nation, gender,
+            datapath = path.join(get_data(), 'jang'))
 
         mannerism, m_other = xml2opt(
             path.join(datapath, 'mannerisms.xml')
