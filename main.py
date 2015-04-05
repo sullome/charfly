@@ -12,7 +12,12 @@ gettext.install('charfly', '/home/none/prj/charfly/locale')
 split_words = lambda s: s.capitalize().translate(str.maketrans('_', ' '))
 
 def get_data():
-    return '/home/none/prj/charfly'
+    if path.isdir('data'):
+        return 'data'
+    elif platform.startswith('linux'):
+        d = getenv('XDG_DATA_HOME')
+        if d: return path.join(d, 'charfly')
+        else: return path.join(getenv('HOME'),'.local/share/charfly')
 
 def xml2opt(path):
     result = []
