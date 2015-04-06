@@ -3,8 +3,9 @@ from rollingdice.fudge import fudge
 from rollingdice.main import dice
 
 from os import path, listdir
-import xml.etree.ElementTree as ET
+from sys import platform
 from random import choice
+import xml.etree.ElementTree as ET
 import gettext
 
 gettext.install('charfly', '/home/none/prj/charfly/locale')
