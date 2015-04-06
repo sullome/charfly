@@ -2,7 +2,7 @@
 from rollingdice.fudge import fudge
 from rollingdice.main import dice
 
-from os import path, listdir
+from os import path, listdir, getenv
 from sys import platform
 from random import choice
 import xml.etree.ElementTree as ET
